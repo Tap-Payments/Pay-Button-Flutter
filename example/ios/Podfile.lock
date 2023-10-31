@@ -1,0 +1,63 @@
+PODS:
+  - Flutter (1.0.0)
+  - integration_test (0.0.1):
+    - Flutter
+  - Pay-Button-iOS (0.0.2):
+    - Robin
+    - SharedDataModels-iOS
+    - SwiftyRSA
+    - TapFontKit-iOS
+  - pay_button_flutter (0.0.1):
+    - Flutter
+    - Pay-Button-iOS (= 0.0.2)
+  - Robin (0.98.0)
+  - SharedDataModels-iOS (0.0.12)
+  - SwiftyRSA (1.7.0):
+    - SwiftyRSA/ObjC (= 1.7.0)
+  - SwiftyRSA/ObjC (1.7.0)
+  - TapFontKit-iOS (0.0.10):
+    - TapSwiftFixesV2
+  - TapSwiftFixesV2 (1.0.3):
+    - TapSwiftFixesV2/CoreGraphics (= 1.0.3)
+    - TapSwiftFixesV2/Exceptions (= 1.0.3)
+    - TapSwiftFixesV2/Threading (= 1.0.3)
+  - TapSwiftFixesV2/CoreGraphics (1.0.3)
+  - TapSwiftFixesV2/Exceptions (1.0.3)
+  - TapSwiftFixesV2/Threading (1.0.3)
+
+DEPENDENCIES:
+  - Flutter (from `Flutter`)
+  - integration_test (from `.symlinks/plugins/integration_test/ios`)
+  - pay_button_flutter (from `.symlinks/plugins/pay_button_flutter/ios`)
+
+SPEC REPOS:
+  trunk:
+    - Pay-Button-iOS
+    - Robin
+    - SharedDataModels-iOS
+    - SwiftyRSA
+    - TapFontKit-iOS
+    - TapSwiftFixesV2
+
+EXTERNAL SOURCES:
+  Flutter:
+    :path: Flutter
+  integration_test:
+    :path: ".symlinks/plugins/integration_test/ios"
+  pay_button_flutter:
+    :path: ".symlinks/plugins/pay_button_flutter/ios"
+
+SPEC CHECKSUMS:
+  Flutter: f04841e97a9d0b0a8025694d0796dd46242b2854
+  integration_test: 13825b8a9334a850581300559b8839134b124670
+  Pay-Button-iOS: f356a041ad586026b9b520c8ab2a6f85aabf064b
+  pay_button_flutter: 179e86c8f02678d10d1e61f0a7fac77c9fdbe67e
+  Robin: a1819c64fdf79a468af2e01aaeabf895d2969fa3
+  SharedDataModels-iOS: 03d22b8a256a6ce698180b24d3ff8fefe42707b1
+  SwiftyRSA: 8c6dd1ea7db1b8dc4fb517a202f88bb1354bc2c6
+  TapFontKit-iOS: cd7376aec8f7edd97145cd0daa5ce584859429c1
+  TapSwiftFixesV2: ea726f752b6259d9e44624039fd6bad94b2a8633
+
+PODFILE CHECKSUM: a57f30d18f102dd3ce366b1d62a55ecbef2158e5
+
+COCOAPODS: 1.12.1
