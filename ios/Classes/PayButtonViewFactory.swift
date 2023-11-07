@@ -63,8 +63,6 @@
          return _view
      }
 
-    // var tapCardView = TapCardView.init()
-
      func createNativeView(view _view: UIView,payButtonView: PayButtonView){
          _view.backgroundColor = UIColor.clear
          DispatchQueue.main.asyncAfter(deadline: .now() + .milliseconds(300)){
@@ -76,8 +74,7 @@
                     payButtonView.trailingAnchor.constraint(equalTo: self._view.trailingAnchor, constant: 0),
                     payButtonView.centerYAnchor.constraint(equalTo: self._view.centerYAnchor)
                  ])
-             payButtonView.initPayButton(configDict: self._args ??  [:],delegate: self.payButtonDelegate, payButtonType:  .BenefitPay)
-             print(payButtonView.frame)
+             payButtonView.initPayButton(configDict: self._args?["configuration"] as? [String:Any] ?? [:],delegate: self.payButtonDelegate, payButtonType: PayButtonTypeEnum.init(rawValue: PayButtonTypeEnum.allCases.map{ $0.toString().lowercased() }.firstIndex(of: (self._args?["button_type"] as? String ?? "").lowercased()) ?? 0) ?? .BenefitPay)
              }
      }
  }

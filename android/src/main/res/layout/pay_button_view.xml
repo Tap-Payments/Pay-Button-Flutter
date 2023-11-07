@@ -2,11 +2,12 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
+    android:id="@+id/linear"
     android:layout_height="wrap_content"
     android:orientation="vertical">
 
     <company.tap.tappaybutton.PayButton
-        android:id="@+id/payButton"
+        android:id="@+id/paybutton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" />
 

@@ -60,13 +60,13 @@ public class PayButtonDelegate implements PluginRegistry.ActivityResultListener,
             HashMap<String, Object> tapCardConfigurations = (HashMap<String, Object>) params.get("configuration");
 
             System.out.println("Tap Card Configurations " + tapCardConfigurations);
-
-            payButton.initPayButton(
-                    activity,
-                    tapCardConfigurations,
-                    PayButtonType.KNET,
-                    this);
-            payButton.invalidate();
+            PayButtonConfig.INSTANCE.addPayButtonStatusDelegate(this);
+//            payButton.initPayButton(
+//                    activity,
+//                    tapCardConfigurations,
+//                    PayButtonType.KNET,
+//                    this);
+          //  payButton.invalidate();
 
 
 //            PayButtonConfig.INSTANCE.initPayButton(activity1, tapCardConfigurations, PayButtonType.KNET, payButton);

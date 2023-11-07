@@ -61,5 +61,5 @@ android {
 
 
 dependencies {
-    implementation 'com.github.Tap-Payments:Pay-Button-Android:0.0.0.6'
+    implementation 'com.github.Tap-Payments:Pay-Button-Android:0.0.4'
 }

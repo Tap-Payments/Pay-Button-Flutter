@@ -1,0 +1,10 @@
+enum ButtonType {
+  BENEFITPAY,
+  KNET,
+  BENEFIT,
+  FAWRY,
+  PAYPAL,
+  TABBY,
+  GOOGLEPAY,
+}
+

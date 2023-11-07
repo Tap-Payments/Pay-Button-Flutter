@@ -2,15 +2,18 @@ import 'dart:convert';
 
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:pay_button_flutter/enums/enums.dart';
 
 class PayButtonFlutterWidget extends StatefulWidget {
-  final Map<String, dynamic> sdkConfiguration;
+  final Map<String, dynamic> configDict;
+  final ButtonType payButtonType;
   final Function()? onReady, onClicked, onCanceled;
   final Function(String?)? onSuccess, onError, onOrderCreated, onChargeCreated;
 
   const PayButtonFlutterWidget({
     super.key,
-    required this.sdkConfiguration,
+    required this.configDict,
+    required this.payButtonType,
     this.onReady,
     this.onClicked,
     this.onSuccess,
@@ -50,6 +53,7 @@ class _PayButtonFlutterWidgetState extends State<PayButtonFlutterWidget> {
 
   @override
   void initState() {
+    debugPrint("Configuration >> ${widget.configDict}");
     Future.delayed(const Duration(seconds: 0), () {
       streamTimeFromNative();
       startTapCardSDK();
@@ -62,7 +66,8 @@ class _PayButtonFlutterWidgetState extends State<PayButtonFlutterWidget> {
       dynamic result = await _channel.invokeMethod(
         'start',
         {
-          "configuration": widget.sdkConfiguration,
+          "button_type": widget.configDict["button_type"],
+          "configuration": widget.configDict["dictionaryHashMap"],
         },
       );
       handleCallbacks(result);
@@ -78,7 +83,8 @@ class _PayButtonFlutterWidgetState extends State<PayButtonFlutterWidget> {
       dynamic result = await _channel.invokeMethod(
         'start2',
         {
-          "configuration": widget.sdkConfiguration,
+          "button_type": widget.configDict["button_type"],
+          "configuration": widget.configDict["dictionaryHashMap"],
         },
       );
 
@@ -112,7 +118,8 @@ class _PayButtonFlutterWidgetState extends State<PayButtonFlutterWidget> {
     }
 
     if (result.containsKey("onError")) {
-      debugPrint("OnError Callback Fired>>>>> ${jsonDecode(result["onError"])} ");
+      debugPrint(
+          "OnError Callback Fired>>>>> ${jsonDecode(result["onError"])} ");
       var resultOfError = result["onError"];
       onErrorFunction = widget.onError;
       onErrorFunction!(resultOfError.toString());
@@ -145,18 +152,27 @@ class _PayButtonFlutterWidgetState extends State<PayButtonFlutterWidget> {
   @override
   Widget build(BuildContext context) {
     if (Theme.of(context).platform == TargetPlatform.android) {
-      return AndroidView(
-        viewType: "plugin/pay_button_view",
-        creationParams: widget.sdkConfiguration,
-        creationParamsCodec: const StandardMessageCodec(),
-        layoutDirection: TextDirection.ltr,
+      return SizedBox(
+        height: 48,
+        child: AndroidView(
+          viewType: "plugin/pay_button_view",
+          creationParams: {
+            "button_type": widget.configDict["button_type"],
+            "configuration": widget.configDict["dictionaryHashMap"],
+          },
+          creationParamsCodec: const StandardMessageCodec(),
+          layoutDirection: TextDirection.ltr,
+        ),
       );
     } else {
       return SizedBox(
         height: 48,
         child: UiKitView(
           viewType: "plugin/pay_button_view",
-          creationParams: widget.sdkConfiguration,
+          creationParams: {
+            "button_type": widget.configDict["button_type"],
+            "configuration": widget.configDict["dictionaryHashMap"],
+          },
           creationParamsCodec: const StandardMessageCodec(),
           layoutDirection: TextDirection.ltr,
         ),

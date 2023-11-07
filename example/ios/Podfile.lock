@@ -2,14 +2,14 @@ PODS:
   - Flutter (1.0.0)
   - integration_test (0.0.1):
     - Flutter
-  - Pay-Button-iOS (0.0.2):
+  - Pay-Button-iOS (0.0.4):
     - Robin
     - SharedDataModels-iOS
     - SwiftyRSA
     - TapFontKit-iOS
   - pay_button_flutter (0.0.1):
     - Flutter
-    - Pay-Button-iOS (= 0.0.2)
+    - Pay-Button-iOS (= 0.0.4)
   - Robin (0.98.0)
   - SharedDataModels-iOS (0.0.12)
   - SwiftyRSA (1.7.0):
@@ -50,8 +50,8 @@ EXTERNAL SOURCES:
 SPEC CHECKSUMS:
   Flutter: f04841e97a9d0b0a8025694d0796dd46242b2854
   integration_test: 13825b8a9334a850581300559b8839134b124670
-  Pay-Button-iOS: f356a041ad586026b9b520c8ab2a6f85aabf064b
-  pay_button_flutter: 179e86c8f02678d10d1e61f0a7fac77c9fdbe67e
+  Pay-Button-iOS: 4f190bd36183821b5125fcf0765dbc50cae1959d
+  pay_button_flutter: 612bdcc3df7db8c72028c52f621a19e4ddb02f6c
   Robin: a1819c64fdf79a468af2e01aaeabf895d2969fa3
   SharedDataModels-iOS: 03d22b8a256a6ce698180b24d3ff8fefe42707b1
   SwiftyRSA: 8c6dd1ea7db1b8dc4fb517a202f88bb1354bc2c6

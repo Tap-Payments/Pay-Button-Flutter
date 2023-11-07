@@ -20,6 +20,7 @@ public class PayButtonViewFactory extends PlatformViewFactory {
     @Override
     public PlatformView create(Context context, int viewId, @Nullable Object args) {
         final Map<String, Object> creationParams = (Map<String, Object>) args;
+        System.out.println("Config in Factory " + args);
         return new PayButtonViewManager(context, viewId, creationParams);
     }
 }
